@@ -1,5 +1,10 @@
 # razrabotka expense BOT
 
+Чтобы проект работал:
+- создать виртуальное окружение (`python3 -m venv venv`)
+- включить его (`source venv/bin/activate`)
+- установить зависимости (`pip install -r requirements.txt`)
+
 Для запуска бота нужно:
 - взять своего бота (или зарегать в BotFather) и добавить ему команды из списка ниже;
 - вставить токен бота в конец файла settings.py (TG_TOKEN='токен');
