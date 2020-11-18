@@ -6,10 +6,10 @@ from bot.services.bot_service import (
     show_expenses_of_category,
 )
 
-from . import settings
-from telegram.ext import Updater, CommandHandler, CallbackContext, \
-    MessageHandler, Filters, CallbackQueryHandler
-from telegram import Bot, Update, ReplyKeyboardMarkup, ReplyKeyboardRemove
+from django.conf import settings
+from telegram.ext import Updater, CommandHandler, \
+    MessageHandler, Filters
+from telegram import Bot
 from telegram.utils.request import Request
 
 
@@ -36,11 +36,9 @@ def start(update, context):
 
 def set_name(update, context):
     name = ' '.join(context.args)
-
     # получили имя
     # должны записать его в базу данных
     # записываем имя именно пользователю с этим chat_id
-
     set_user_name(update.effective_user.id, name)
 
     context.bot.send_message(

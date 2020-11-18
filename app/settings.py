@@ -120,3 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+# TODO: вставить токен
+TG_TOKEN = 'VSTAVTE_SUDA_SVOI_TOKEN'
+PROXY_URL = 'https://telegg.ru/orig/bot'
