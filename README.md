@@ -4,6 +4,8 @@
 - создать виртуальное окружение (`python3 -m venv venv`)
 - включить его (`source venv/bin/activate`)
 - установить зависимости (`pip install -r requirements.txt`)
+- `./manage.py migrate` (только в первый раз)
+- `./manage.py createsuperuser` (только 1 раз создаем пользователя)
 
 Для запуска бота нужно:
 - взять своего бота (или зарегать в BotFather) и добавить ему команды из списка ниже;
@@ -11,8 +13,6 @@
 - запустить бота командой `./manage.py run_bot`
 
 Для запуска админки:
-- `./manage.py migrate` (только в первый раз)
-- `./manage.py createsuperuser` (только 1 раз создаем пользователя)
 - `./manage.py runserver`
 
 Список команд бота:
