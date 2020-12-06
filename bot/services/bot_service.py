@@ -1,3 +1,5 @@
+import re
+
 from bot.models import TelegramUser, Message, Category, Expense
 
 

@@ -11,6 +11,7 @@ from telegram.ext import Updater, CommandHandler, \
     MessageHandler, Filters
 from telegram import Bot
 from telegram.utils.request import Request
+import re
 
 
 request = Request(
@@ -107,7 +108,8 @@ def run_bot():
     expense_handler = CommandHandler('expense', expense)
     show_expenses_handler = CommandHandler('show_expenses', show_expenses)
 
-    greeting_handler = MessageHandler(Filters.text, greeting)
+    # work_handler = MessageHandler(Filters.regex(r"сегодня\s+я\s+поработал\s+(\d+)\s+ч") & (~Filters.command), set_work)
+    greeting_handler = MessageHandler(Filters.text & (~Filters.command), greeting)
 
     updater.dispatcher.add_handler(start_handler)
     updater.dispatcher.add_handler(set_name_handler)

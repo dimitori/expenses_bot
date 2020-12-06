@@ -2,7 +2,7 @@ from django.db import models
 
 
 class TelegramUser(models.Model):
-    telegram_id = models.IntegerField(unique=True, primary_key=True)
+    telegram_id = models.IntegerField(unique=True, primary_key=True, verbose_name="Id of telegram user")
     name = models.CharField(max_length=100, null=True, blank=True)
 
     def __str__(self):
@@ -13,6 +13,8 @@ class Message(models.Model):
     user = models.ForeignKey(to=TelegramUser, on_delete=models.CASCADE)
     text = models.TextField()
     telegram_id = models.IntegerField()
+    date_create = models.DateTimeField(auto_now_add=True)
+    date_update = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f"{self.user}-{self.telegram_id}"
